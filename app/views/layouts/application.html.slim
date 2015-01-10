@@ -8,5 +8,10 @@ html lang=I18n.locale
     = csrf_meta_tags
 
   body
+    .flash-bar
+      p.notice
+        =notice
+      p.alert
+        =alert
     = yield
     = javascript_include_tag 'application'

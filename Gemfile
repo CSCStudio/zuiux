@@ -28,6 +28,21 @@ gem 'devise', '~> 3.4.1'
 
 gem 'bootstrap-sass', '~> 3.3.1.0'
 
+# rails server
+gem 'puma', '~> 2.10.2'
+
+group :development do
+  #deploy
+  gem "better_errors"
+  gem 'annotate', '~> 2.6.5'
+
+  gem 'capistrano', '~> 3.3.5', require: false
+  gem 'capistrano-rvm', '~> 0.1.2'
+  gem 'capistrano-rails', '~> 1.1.2'
+  gem 'capistrano-bundler', '~> 1.1.3'
+  gem 'capistrano3-puma', '~> 0.8.3'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

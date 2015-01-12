@@ -11,7 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110051205) do
+ActiveRecord::Schema.define(version: 20150112142227) do
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "products_rounds", force: :cascade do |t|
+    t.integer  "product_id", limit: 4
+    t.integer  "round_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "products_rounds", ["product_id"], name: "index_products_rounds_on_product_id", using: :btree
+  add_index "products_rounds", ["round_id"], name: "index_products_rounds_on_round_id", using: :btree
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "product_id", limit: 4
+    t.integer  "round_id",   limit: 4
+    t.string   "rate_type",  limit: 255
+    t.integer  "point",      limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "ratings", ["product_id"], name: "index_ratings_on_product_id", using: :btree
+  add_index "ratings", ["round_id"], name: "index_ratings_on_round_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+
+  create_table "rounds", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -40,4 +79,9 @@ ActiveRecord::Schema.define(version: 20150110051205) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "products_rounds", "products", on_delete: :cascade
+  add_foreign_key "products_rounds", "rounds", on_delete: :cascade
+  add_foreign_key "ratings", "products", on_delete: :cascade
+  add_foreign_key "ratings", "rounds", on_delete: :cascade
+  add_foreign_key "ratings", "users", on_delete: :cascade
 end

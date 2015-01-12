@@ -1,6 +1,5 @@
 source 'https://ruby.taobao.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
@@ -31,11 +30,13 @@ gem 'bootstrap-sass', '~> 3.3.1.0'
 # rails server
 gem 'puma', '~> 2.10.2'
 
+gem 'settingslogic', '~> 2.0.9'
+
 group :development do
-  #deploy
   gem "better_errors"
   gem 'annotate', '~> 2.6.5'
 
+  #deploy
   gem 'capistrano', '~> 3.3.5', require: false
   gem 'capistrano-rvm', '~> 0.1.2'
   gem 'capistrano-rails', '~> 1.1.2'

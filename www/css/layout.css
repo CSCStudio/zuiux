@@ -1158,7 +1158,7 @@ ul.slimmenu.collapsed li > ul {
   display: inline-block;
 }
   .cd-item-info h5, .cd-item-info p {
-    max-width: 480px;
+    /*max-width: 480px;*/
     max-height: 50%;
     overflow: hidden; 
 	text-align:left;}
@@ -1365,19 +1365,21 @@ ul.slimmenu.collapsed li > ul {
 	-moz-box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
-	width: calc(100% - 50px);
-	height: 2px;
+	width: calc(100% - 54px);
+	height: 20px;
 	background: #ccc;
 }
 .pro-bar-margin {
-	margin-bottom:15px;
+	margin-bottom:3%;
+    float: left;
 }
 .pro-bar-margin-last {
-	margin-bottom:9px;
+	margin-bottom:10px;
+    float: left;
 }
 .skills-name{
 	position:relative;
-	width:100%;
+	width:54px;
 	text-align:left;
 	padding-bottom:5px;
 	font-family: 'Open Sans', sans-serif;
@@ -1386,10 +1388,15 @@ ul.slimmenu.collapsed li > ul {
 	letter-spacing:2px;
 	color:#212121;
 	text-transform: uppercase;
+    float:left;
+    font-size: 14px;
+}
+.vote-info{
+    margin-top: 13px;
 }
 .pro-bar {
 	position:relative;
-	height: 2px;
+	height: 20px;
 	overflow:hidden;
 }
 .text-in-bar {

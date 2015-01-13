@@ -1,8 +1,4 @@
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=Courgette&subset=latin,latin-ext);
-
 @import url("colors/color-blue.css");
 
 
@@ -160,187 +156,6 @@ text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3); letter-spacing: 0;}
 }
 
 /* #PAGE LOAD */
-
-body.royal_loader {
-    background: none;
-    visibility: hidden;
-}
-#royal_preloader {
-    width: 100%;
-    height: 100%;
-    font-family: Arial;
-    font-size: 12px;
-    visibility: visible;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    z-index: 9999999999;
-    -webkit-transition: opacity 0.2s linear 0.8s;
-       -moz-transition: opacity 0.2s linear 0.8s;
-        -ms-transition: opacity 0.2s linear 0.8s;
-         -o-transition: opacity 0.2s linear 0.8s;
-            transition: opacity 0.2s linear 0.8s;
-}
-#royal_preloader.complete {
-    opacity: 0;
-}
-#royal_preloader .background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    background-color: #000000;
-    -webkit-transition: background 0.5s linear;
-       -moz-transition: background 0.5s linear;
-        -ms-transition: background 0.5s linear;
-         -o-transition: background 0.5s linear;
-            transition: background 0.5s linear;
-}
-#royal_preloader.number .name {
-    position: absolute;
-    top: 20%;
-    left: 0px;
-    right: 0px;
-    text-transform: uppercase;
-    color: #EEEEEE;
-    text-align: center;
-    opacity: 0;
-    -webkit-transition: -webkit-transform 0.3s linear;
-       -moz-transition: -moz-transform 0.3s linear;
-        -ms-transition: -ms-transform 0.3s linear;
-         -o-transition: -o-transform 0.3s linear;
-            transition: transform 0.3s linear;
-    -webkit-animation: fly 0.3s;
-       -moz-animation: fly 0.3s;
-        -ms-animation: fly 0.3s;
-         -o-animation: fly 0.3s;
-            animation: fly 0.3s;
-}
-#royal_preloader.number .percentage {
-    color: #FFFFFF;
-    font-family: Impact, Arial;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin: -90px 0px 0px -90px;
-    background-image: url('../images/loader.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    padding-top: 80px;
-    width: 180px;
-    position: absolute;
-    font-size: 50px;
-    top: 50%;
-    left: 50%;
-    -webkit-transition: all 0.3s linear 0.5s;
-       -moz-transition: all 0.3s linear 0.5s;
-        -ms-transition: all 0.3s linear 0.5s;
-         -o-transition: all 0.3s linear 0.5s;
-            transition: all 0.3s linear 0.5s;
-}
-#royal_preloader.text .loader {
-    position: absolute;
-	text-shadow: 0 0 15px rgba(0,0,0,0.3);
-	text-transform:uppercase;
-	text-align:center;
-    top: 50%;
-    left: 50%;
-	width:240px;
-	margin-left:-120px;
-    height: 60px;
-    line-height: 60px;
-    margin-top: -30px;
-    font-size: 30px;
-    white-space: nowrap;
-}
-#royal_preloader.text .loader div {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0%;
-    background-color: #000000;
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -webkit-transition: left 0.3s linear;
-       -moz-transition: left 0.3s linear;
-        -ms-transition: left 0.3s linear;
-         -o-transition: left 0.3s linear;
-            transition: left 0.3s linear;
-}
-#royal_preloader.logo .loader {
-    width: 204px;
-    height: 28px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -14px 0px 0px -102px;
-	background-size:200px 28px;
-    overflow: hidden;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#royal_preloader.logo .loader div {
-    position: absolute;
-    bottom: 0%;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -webkit-transition: bottom 0.3s linear;
-       -moz-transition: bottom 0.3s linear;
-        -ms-transition: bottom 0.3s linear;
-         -o-transition: bottom 0.3s linear;
-            transition: bottom 0.3s linear;
-}
-#royal_preloader.logo .percentage {
-    position: absolute;
-    width: 80px;
-    height: 40px;
-    line-height: 40px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight:400;
-	font-size: 13px;
-	letter-spacing:2px;
-    top: 50%;
-    left: 50%;
-    margin: 20px 0px 0px -40px;
-    color: #212121;
-    text-align: center;
-}
-
-@-webkit-keyframes fly {
-    0% { opacity: 0; top: 50%; }
-    20% {opacity: 1; top: 40%; }
-    100% { opacity: 0; top: 20%;}
-}
-@-moz-keyframes fly {
-    0% { opacity: 0; top: 50%; }
-    20% {opacity: 1; top: 40%; }
-    100% { opacity: 0; top: 20%;}
-}
-@-ms-keyframes fly {
-    0% { opacity: 0; top: 50%; }
-    20% {opacity: 1; top: 40%; }
-    100% { opacity: 0; top: 20%;}
-}
-@-o-keyframes fly {
-    0% { opacity: 0; top: 50%; }
-    20% {opacity: 1; top: 40%; }
-    100% { opacity: 0; top: 20%;}
-}
-@keyframes fly {
-    0% { opacity: 0; top: 50%; }
-    20% {opacity: 1; top: 40%; }
-    100% { opacity: 0; top: 20%;}
-}
-
 
 /* #Navigation
 ================================================== */
@@ -1104,6 +919,42 @@ ul.slimmenu.collapsed li > ul {
   position: relative;
   z-index: 1;
   overflow: hidden; }
+
+  .cd-slider-wrapper .cd-slider-cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+  }
+  .cd-slider-wrapper:hover .cd-slider-cover{
+    opacity: 1;
+  }
+
+  .cd-slider-cover a{
+    position: relative;
+    top: calc(50% - 40px);
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    line-height: 96px;
+  }
+
+    .cd-slider-cover i{
+        font-size: 35px;
+        color: white;
+    }
+
   .cd-slider::before {
     /* never visible - this is used in jQuery to check the current MQ */
     content: 'mobile';
@@ -1715,9 +1566,9 @@ ul.slimmenu.collapsed li > ul {
 	position:relative;
 	text-align:center;
 	margin:0 auto;
-	width:calc(100% - 20px);
+	width:100%;
 	padding-top:20px;
-	padding-bottom:10px;
+	/*padding-bottom:10px;*/
 }
 #projects-grid:after {
   content: '';
@@ -1734,7 +1585,6 @@ ul.slimmenu.collapsed li > ul {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	overflow:hidden;
-	margin-left:-1px;
 	-webkit-transform: translate3d(1px,0,0);
 	transform: translate3d(1px,0,0);
 }
@@ -1753,7 +1603,7 @@ ul.slimmenu.collapsed li > ul {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	border:10px solid #fff;
+	/*border:10px solid #fff;*/
 	background:rgba(0,0,0,0);
 	z-index:2;
     -webkit-transition: all 300ms linear;
@@ -3680,7 +3530,7 @@ ul.slimmenu li > ul {
 	width:100%;
 }
 #projects-grid{
-	width:calc(100% - 40px);
+	width:100%;
 }
 .portfolio-box-1 .mask-1{
 	border:20px solid #fff;
@@ -3718,7 +3568,7 @@ ul.slimmenu li > ul {
 	width:100%;
 }
 #projects-grid{
-	width:calc(100% - 40px);
+	width:100%;
 }
 .portfolio-box-1 .mask-1{
 	border:20px solid #fff;

@@ -30,5 +30,23 @@ html lang=I18n.locale
           li
             = link_to '规则', rules_path('html')
     = yield
+    /!
+      | FOOTER
+      | \==================================================
+    .footer-wrap.boxed-width
+      .footer-social
+        .container
+          .sixteen.columns
+            a data-dummy="twitter" href="#"  twitter
+            a data-dummy="github" href="#"  github
+            a data-dummy="facebook" href="#"  facebook
+            a data-dummy=("google +") href="#"  google +
+      .footer-credit
+        .container
+          .sixteen.columns
+            p
+              | © All rights reserved. Made by
+              a data-dummy=("IG Design") href="http://themeforest.net/user/IG_design?ref=IG_design"
+                span CSC Studio
     = javascript_include_tag 'application'
     = yield :bottom

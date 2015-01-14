@@ -13,3 +13,7 @@
 /tmp
 
 .capistrano/
+.public/assets/
+
+config/secrets.yml
+config/database.yml

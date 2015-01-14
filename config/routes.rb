@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root 'page#home'
+
+  get 'products' => 'page#products'
+  get 'rules' => 'page#rules'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -31,6 +31,7 @@
    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
    
+   <script type="text/javascript" src="js/jquery.js"></script>   
 </head>
 <body>   
    
@@ -104,186 +105,109 @@
    <!-- ABOUT US SECTION
     ================================================== -->   
    
-   <div id="about">
-   
-      <div class="section boxed-width grey-background padding-top-bottom">   
-         
-         <div class="container">   
-            <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-               <div class="header-section-text">   
-                  <div class="sub-top">下期共4件作品</div>
-                  <h2>投票进行中</h2>   
-                  <div class="sub-line"></div>
-               </div>         
-            </div>   
-            <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">      
-               <div class="about-carousel-wrap">                  
-                  <div id="sync1" class="owl-carousel">
-                     <div class="item">
-                        <p class="text-padding">最UX是专业的设计团队和体验师平台。我们认为，影响一个网站的体验主要有四个核心因素：设计，交互，创意，内容。</p> 
-                        <p>每周四中午12点，我们截止这一周的作品报名。我们会在接下来的几个小时里进行一轮初步的筛选，并在傍晚时分开始这一轮的投票。</p>
-                        <p>该轮投票将在下一个周二傍晚结束，并公布该轮最UX作品。</p>
-                     </div>
-                     <div class="item">
-                        <p class="text-padding">项目的优秀与否，要看大众的接受程度如何。而众多网站往往忽略这一点。闭门造车的傲娇，不如风风雨雨的考验。</p>
-                        <p>最UX的目标是建立一个让设计师可以更快获得更好的反馈，以此来完善自己的产品。</p>
-                     </div>
-                     <div class="item">
-                        <p class="text-padding">希望营造一个公平，公正，和谐的氛围。</p> 
-                        
-                        <p>设计：和谐的色彩，适当的排列，文字与图片的搭配，等等。</p>
-                        <p>交互：页面跳转的流畅度，用户实现需求的效率，各元素的相关性，等等。</p>
-                        <p>创意：别具一格的风格等。创意是推动人类发展的关键。</p>
-                        <p>内容：光有漂亮的脸蛋显然是不够的。内容便是网站的内涵。</p>
-                     </div>
-                  </div>
-
-                  <div id="sync2" class="owl-carousel">
-                     <div class="item">
-                        <div class="line"></div>
-                        <div class="line-ver"></div>
-                        <div class="point-item "></div>
-                        <p>关于投票</p>   
-                     </div>
-                     <div class="item">
-                        <div class="line"></div>
-                        <div class="line-ver"></div>
-                        <div class="point-item "></div>
-                        <p>设计师</p>
-                     </div>
-                     <div class="item">
-                        <div class="line"></div>
-                        <div class="line-ver"></div>
-                        <div class="point-item "></div>
-                        <p>体验师</p>
-                     </div>
-                  </div>                     
-               </div>      
+   <div class="section boxed-width grey-background padding-top-bottom">   
+      
+      <div class="container">   
+         <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+            <div class="header-section-text">   
+               <div class="sub-top">个中看法，一番笑谈</div>
+               <h2>讨论</h2>   
+               <div class="sub-line"></div>
             </div>         
          </div>   
-         
-      </div>
-   
-   <!-- SEP. SECTION
-    ================================================== -->
-
-      <div class="section product boxed-width grey-background">
-         <div class="cd-single-item">
-            <div class="cd-slider-wrapper">
-               <div class="cd-slider-cover">
-                  <a href="#link-to-the-site"><i class="fa fa-chain"></i></a>
-               </div>
-               <ul class="cd-slider">
-                  <li class="selected"><img src="images/img-1.jpg" alt="Product Image 1"></li>
-               </ul> <!-- cd-slider -->
-            </div> <!-- cd-slider-wrapper -->
-
-            <div class="cd-item-info" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-            
-               <h5>站点名字（初始状态）</h5>
-               <p>We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch.</p>
-               <form id="ajax-form">
-                  <div class="sub-line"></div>
-                  <button class="send_message" id="send"><span data-hover="submit">我要投票</span></button>
-                  <div class="status">已有20票</div>
-               </form>
-            </div> <!-- cd-item-info -->
-         </div> <!-- cd-single-item -->
-      </div>
-   
-      <div class="section product boxed-width grey-background">
-         <div class="cd-single-item">
-            <div class="cd-slider-wrapper">
-               <div class="cd-slider-cover">
-                  <a href="#link-to-the-site"><i class="fa fa-chain"></i></a>
-               </div>
-               <ul class="cd-slider">
-                  <li class="selected"><img src="images/img-1.jpg" alt="Product Image 1"></li>
-               </ul> <!-- cd-slider -->
-            </div> <!-- cd-slider-wrapper -->
-
-            <div class="cd-item-info" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-            
-               <h5>站点名字（点击投票键后出现）</h5>
-               <p><label>设计：</label><span></span></p>
-               <p><label>交互：</label><span></span></p>
-               <p><label>创意：</label><span></span></p>
-               <p><label>内容：</label><span></span></p>
-               <form id="ajax-form">
-                  <div class="sub-line"></div>
-                  <button class="send_message" id="send"><span data-hover="submit">确定提交</span></button>
-                  <!-- <div class="status">3 days left</div> -->
-               </form>
-            </div> <!-- cd-item-info -->
-         </div> <!-- cd-single-item -->
-      </div>
-   
-      <div class="section product boxed-width grey-background">
-         <div class="cd-single-item">
-            <div class="cd-slider-wrapper">
-               <div class="cd-slider-cover">
-                  <a href="#link-to-the-site"><i class="fa fa-chain"></i></a>
-               </div>
-               <ul class="cd-slider">
-                  <li class="selected"><img src="images/img-1.jpg" alt="Product Image 1"></li>
-               </ul> <!-- cd-slider -->
-            </div> <!-- cd-slider-wrapper -->
-
-            <div class="cd-item-info" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-            
-               <h5>站点名字（已投票）</h5>
-               <p>We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch.</p>
-               <form id="ajax-form">
-                  <div class="sub-line"></div>
-                  <button class="send_message" id="send"><span data-hover="submit">参与讨论</span></button>
-                  <!-- <div class="status">3 days left</div> -->
-               </form>
-            </div> <!-- cd-item-info -->
-         </div> <!-- cd-single-item -->
-      </div>
+         <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">      
+            <div class="about-carousel-wrap">                  
+               <div id="sync1" class="owl-carousel">
+                  <div class="item">
+                     <p class="text-padding">最UX是专业的设计团队和体验师平台。我们认为，影响一个网站的体验主要有四个核心因素：设计，交互，创意，内容。</p> 
+                     <p>每周四中午12点，我们截止这一周的作品报名。我们会在接下来的几个小时里进行一轮初步的筛选，并在傍晚时分开始这一轮的投票。</p>
+                     <p>该轮投票将在下一个周二傍晚结束，并公布该轮最UX作品。</p>
+                  </div>
+               </div>                  
+            </div>      
+         </div>         
+      </div>   
+      
    </div>
 
-   <!-- SEP. SECTION
+   <!-- CONTACT SECTION
     ================================================== -->
-   
-   <div class="section boxed-width padding-top-bottom-parallax">
 
-      <div class="parallax-sep-1"></div>
-   
-      <div class="sep-background-mask"></div>
-   
-      <div class="container">   
-         <div class="four columns">   
-            <div class="counter-wrap">   
-               <div class="counter-numb"><span class="counter-facts">35</span></div>
-               <div class="counter-line"></div>
-               <h6>期最佳UX</h6>   
+   <div id="contact">   
+
+      <div class="section boxed-width white-background padding-top-comment">
+      
+         <div class="container">   
+            
+            <div class="two columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+               <div class="team-wrap">   
+                  <img src="images/team1.jpg" alt="">   
+                  <div class="comment-name">
+                     <h6>Alex Andrews</h6>
+                     <p><span>founder</span></p>
+                  </div>
+               </div>   
+            </div>
+            <div class="fourteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+              <div class="post-top-text">
+               <h6>亮点</h6>
+               <p>We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. </p>
+               <h6>不足</h6>
+               <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.</p>
+              </div>
+            </div>
+            <div class="sixteen columns">   
+
+               <div class="section-separator-line"></div>
             </div>   
-         </div>   
-         <div class="four columns">   
-            <div class="counter-wrap">   
-               <div class="counter-numb"><span class="counter-facts">180</span></div>
-               <div class="counter-line"></div>
-               <h6>份作品上传</h6>   
-            </div>   
-         </div>      
-         <div class="four columns">   
-            <div class="counter-wrap">   
-               <div class="counter-numb"><span class="counter-facts">2984</span></div>
-               <div class="counter-line"></div>
-               <h6>人次参与</h6>   
-            </div>   
-         </div>   
-         <div class="four columns">   
-            <div class="counter-wrap">   
-               <div class="counter-numb"><span class="counter-facts">14297</span></div>
-               <div class="counter-line"></div>
-               <h6>次投票</h6>   
-            </div>   
-         </div>   
+               
+            <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+               <div class="eight columns" id="good_comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+                  <label for="name"> 
+                     <span class="error" id="err-name">please enter name</span>
+                  </label>
+                  <input name="name" id="name" type="text"   placeholder="一句亮点，万分鼓励＊"/>
+               </div>
+               <div class="eight columns" id="bad_comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+                  <label for="email"> 
+                     <span class="error" id="err-email">please enter e-mail</span>
+                     <span class="error" id="err-emailvld">e-mail is not a valid format</span>
+                  </label>
+                  <input name="email" id="email" type="text"  placeholder="一句不足，感激涕零＊"/>
+               </div>
+               <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+                  <label for="message"></label>
+                  <textarea name="message" id="message" placeholder="写下更多的感受"></textarea>
+               </div>
+               <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+                  <div id="button-con"><button class="send_message" id="send"><span data-hover="submit">submit</span></button></div>               
+               </div>
+               <div class="clear"></div>   
+               <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
+               <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
+               <div class="error" id="err-state"></div>
+            </form>   
+               
+            <div class="clear"></div>
+            <div id="ajaxsuccess">Successfully sent!!</div>
+            <div class="clear"></div>
+         </div>
+            
       </div>
-         
-   </div>
+      
+   </div>   
+   <script>
+      $(document).ready(function(){
+         $("#good_comment input").focusin(function(){
+            $("#good_comment").addClass("twelve").removeClass("eight").removeClass("four");
+            $("#bad_comment").addClass("four").removeClass("eight").removeClass("twelve");
+         });
+         $("#bad_comment input").focusin(function(){
+            $("#bad_comment").addClass("twelve").removeClass("eight").removeClass("four");
+            $("#good_comment").addClass("four").removeClass("eight").removeClass("twelve");
+         });
+      });
+   </script>
 
    <!-- FOOTER
     ================================================== -->   
@@ -316,7 +240,6 @@
       
    <!-- JAVASCRIPT
     ================================================== -->
-<script type="text/javascript" src="js/jquery.js"></script>   
 <script type="text/javascript" src="js/retina-1.1.0.min.js"></script>   
 <script type="text/javascript" src="js/classie.js"></script>
 <script type="text/javascript" src="js/cbpAnimatedHeader.min.js"></script>

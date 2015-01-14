@@ -115,17 +115,34 @@
                <div class="sub-line"></div>
             </div>         
          </div>   
-         <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">      
-            <div class="about-carousel-wrap">                  
-               <div id="sync1" class="owl-carousel">
-                  <div class="item">
-                     <p class="text-padding">最UX是专业的设计团队和体验师平台。我们认为，影响一个网站的体验主要有四个核心因素：设计，交互，创意，内容。</p> 
-                     <p>每周四中午12点，我们截止这一周的作品报名。我们会在接下来的几个小时里进行一轮初步的筛选，并在傍晚时分开始这一轮的投票。</p>
-                     <p>该轮投票将在下一个周二傍晚结束，并公布该轮最UX作品。</p>
-                  </div>
-               </div>                  
-            </div>      
-         </div>         
+         <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+            <div class="eight columns" id="good_comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+               <label for="name"> 
+                  <span class="error" id="err-name">please enter name</span>
+               </label>
+               <input name="name" id="name" type="text"   placeholder="一句亮点，万分鼓励＊"/>
+            </div>
+            <div class="eight columns" id="bad_comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+               <label for="email"> 
+                  <span class="error" id="err-email">please enter e-mail</span>
+                  <span class="error" id="err-emailvld">e-mail is not a valid format</span>
+               </label>
+               <input name="email" id="email" type="text"  placeholder="一句不足，感激涕零＊"/>
+            </div>
+            <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+               <label for="message"></label>
+               <textarea name="message" id="message" placeholder="写下更多的感受"></textarea>
+            </div>
+            <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
+               <div id="button-con"><button class="send_message" id="send"><span data-hover="submit">submit</span></button></div>               
+            </div>
+            <div class="clear"></div>   
+            <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
+            <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
+            <div class="error" id="err-state"></div>
+         </form>          
+
+             
       </div>   
       
    </div>
@@ -137,64 +154,124 @@
 
       <div class="section boxed-width white-background padding-top-comment">
       
-         <div class="container">   
-            
-            <div class="two columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
-               <div class="team-wrap">   
-                  <img src="images/team1.jpg" alt="">   
-                  <div class="comment-name">
-                     <h6>Alex Andrews</h6>
-                     <p><span>founder</span></p>
-                  </div>
-               </div>   
-            </div>
-            <div class="fourteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
-              <div class="post-top-text">
-               <h6>亮点</h6>
-               <p>We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. </p>
-               <h6>不足</h6>
-               <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.</p>
-              </div>
-            </div>
-            <div class="sixteen columns">   
+         <div class="container">
 
-               <div class="section-separator-line"></div>
-            </div>   
-               
-            <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
-               <div class="eight columns" id="good_comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-                  <label for="name"> 
-                     <span class="error" id="err-name">please enter name</span>
-                  </label>
-                  <input name="name" id="name" type="text"   placeholder="一句亮点，万分鼓励＊"/>
+            <!-- comments -->
+            <div class="comment-wrapper">
+               <div class="two columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <div class="team-wrap">   
+                     <img src="images/team1.jpg" alt="">   
+                     <div class="comment-name">
+                        <h6>Alex Andrews</h6>
+                        <p><span>founder</span></p>
+                     </div>
+                  </div>   
                </div>
-               <div class="eight columns" id="bad_comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-                  <label for="email"> 
-                     <span class="error" id="err-email">please enter e-mail</span>
-                     <span class="error" id="err-emailvld">e-mail is not a valid format</span>
-                  </label>
-                  <input name="email" id="email" type="text"  placeholder="一句不足，感激涕零＊"/>
+               <div class="fourteen columns comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <span class="good">亮点</span>
+                  <p>
+                     We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. 
+                  </p>
+                  <span class="bad">不足</span>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <span class="feeling">感受</span>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <div class="section-separator-line">
+                     <span class="posted-time">Posted: 3 days ago</span>
+                     <i class="fa fa-comment"></i>
+                     <i class="fa fa-heart"></i>
+                     <i class="fa fa-gavel"></i>
+                  </div>
                </div>
-               <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-                  <label for="message"></label>
-                  <textarea name="message" id="message" placeholder="写下更多的感受"></textarea>
+               <div class="clear break"></div>
+
+            </div>
+
+            <!-- replies -->
+             <div class="comment-wrapper reply">
+               <div class="two columns"></div>
+               <div class="fourteen columns comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <div class="avatar-wrap">   
+                     <img src="images/team1.jpg" alt="">   
+                     <div class="comment-name">
+                     </div>
+                  </div>  
+                  <p class="name"><span>Alex Andrews</span>Founder</p>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <div class="section-separator-line">
+                     <span class="posted-time">Posted: 3 days ago</span>
+                     <i class="fa fa-comment"></i>
+                  </div>
                </div>
-               <div class="sixteen columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">
-                  <div id="button-con"><button class="send_message" id="send"><span data-hover="submit">submit</span></button></div>               
+               <div class="clear break"></div>
+            </div>
+
+            <!-- comment -->
+            <div class="comment-wrapper">
+               <div class="two columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <div class="team-wrap">   
+                     <img src="images/team1.jpg" alt="">   
+                     <div class="comment-name">
+                        <h6>Alex Andrews</h6>
+                        <p><span>founder</span></p>
+                     </div>
+                  </div>   
                </div>
-               <div class="clear"></div>   
-               <div class="error text-align-center" id="err-form">There was a problem validating the form please check!</div>
-               <div class="error text-align-center" id="err-timedout">The connection to the server timed out!</div>
-               <div class="error" id="err-state"></div>
-            </form>   
-               
-            <div class="clear"></div>
-            <div id="ajaxsuccess">Successfully sent!!</div>
-            <div class="clear"></div>
+               <div class="fourteen columns comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <span class="good">亮点</span>
+                  <p>
+                     We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. 
+                  </p>
+                  <span class="bad">不足</span>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <span class="feeling">感受</span>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <div class="section-separator-line">
+                     <span class="posted-time">Posted: 3 days ago</span>
+                     <i class="fa fa-heart"></i>
+                     <i class="fa fa-gavel"></i>
+                     <i class="fa fa-comment"></i>
+                  </div>
+               </div>
+               <div class="clear break"></div>
+            </div>
+            <div class="comment-wrapper">
+               <div class="two columns" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <div class="team-wrap">   
+                     <img src="images/team1.jpg" alt="">   
+                     <div class="comment-name">
+                        <h6>Alex Andrews</h6>
+                        <p><span>founder</span></p>
+                     </div>
+                  </div>   
+               </div>
+               <div class="fourteen columns comment" data-scroll-reveal="enter bottom move 100px over 0.6s after 0.2s">   
+                  <span class="good">亮点</span>
+                  <p>
+                     We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. 
+                  </p>
+                  <span class="bad">不足</span>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <span class="feeling">感受</span>
+                  <p>Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+                  </p>
+                  <div class="section-separator-line">
+                     <span class="posted-time">Posted: 3 days ago</span>
+                     <i class="fa fa-heart"></i>
+                     <i class="fa fa-gavel"></i>
+                     <i class="fa fa-comment"></i>
+                  </div>
+               </div>
+               <div class="clear break"></div>
+            </div>
          </div>
-            
       </div>
-      
    </div>   
    <script>
       $(document).ready(function(){
@@ -205,6 +282,14 @@
          $("#bad_comment input").focusin(function(){
             $("#bad_comment").addClass("twelve").removeClass("eight").removeClass("four");
             $("#good_comment").addClass("four").removeClass("eight").removeClass("twelve");
+         });
+         $("#good_comment input").focusout(function(){
+            $("#good_comment").addClass("eight").removeClass("twelve").removeClass("four");
+            $("#bad_comment").addClass("eight").removeClass("four").removeClass("twelve");
+         });
+         $("#bad_comment input").focusout(function(){
+            $("#bad_comment").addClass("eight").removeClass("twelve").removeClass("four");
+            $("#good_comment").addClass("eight").removeClass("four").removeClass("twelve");
          });
       });
    </script>

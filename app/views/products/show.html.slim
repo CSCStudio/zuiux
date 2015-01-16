@@ -1,0 +1,179 @@
+#top.section.boxed-width.grey-background.padding-posts
+  .container
+    .eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+      .post-top-text
+        h4
+          | 站点名字在这里哦
+          br/
+          span.last-week-label
+            | 本期最
+            span UX
+            span/
+        .sub-line
+        .sub-text
+          span> 作者：
+          | 哈利波特
+    .eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+      .post-top-text
+        p.text-padding We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+        p We take pride in delivering only the best. We're an agency born out of a passion to make great products. We help companies and startups from all over the world materialize their ideas.
+    .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+      .project-image-wrapper
+        #owl-post-slider.owl-carousel.owl-theme
+          .item
+            img alt="" src=image_url("blog/2.jpg")
+          .item
+            img alt="" src=image_url("blog/3.jpg")
+          .item
+            img alt="" src=image_url("blog/9.jpg")
+/!
+  | HOME SECTION
+  | \==================================================
+#home.section.home.boxed-width style="display:none;"
+/!
+  | ABOUT US SECTION
+  | \==================================================
+.section.boxed-width.grey-background.padding-top-bottom
+  .container
+    .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+      .header-section-text
+        .sub-top 个中看法，一番笑谈
+        h2 讨论
+        .sub-line
+    form#ajax-form action="mail-it.php" method="post" name="ajax-form"
+      #good_comment.eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        label for="name"
+          span#err-name.error please enter name
+        input#name name="name" placeholder="一句亮点，万分鼓励＊" type="text" /
+      #bad_comment.eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        label for="email"
+          span#err-email.error please enter e-mail
+          span#err-emailvld.error e-mail is not a valid format
+        input#email name="email" placeholder="一句不足，感激涕零＊" type="text" /
+      .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        label for="message"
+        textarea#message name="message" placeholder="写下更多的感受"
+      .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        #button-con
+          button#send.send_message
+            span data-hover="submit"  submit
+      .clear
+      #err-form.error.text-align-center There was a problem validating the form please check!
+      #err-timedout.error.text-align-center The connection to the server timed out!
+      #err-state.error
+/!
+  | CONTACT SECTION
+  | \==================================================
+#contact
+  .section.boxed-width.white-background.padding-top-comment
+    .container
+      /! comments
+      .comment-wrapper
+        .two.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          .team-wrap
+            img alt="" src=image_url("team1.jpg")
+            .comment-name
+              h6 Alex Andrews
+              p
+                span founder
+        .fourteen.columns.comment data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          span.good 亮点
+          p
+            | We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences.
+          span.bad 不足
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          span.feeling 感受
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          .section-separator-line
+            span.posted-time Posted: 3 days ago
+            i.fa.fa-comment
+            i.fa.fa-heart
+            i.fa.fa-gavel
+        .clear.break
+      /! replies
+      .comment-wrapper.reply
+        .two.columns
+        .fourteen.columns.comment data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          .avatar-wrap
+            img alt="" src=image_url("team1.jpg")
+            .comment-name
+          p.name
+            span> Alex Andrews
+            | Founder
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          .section-separator-line
+            span.posted-time Posted: 3 days ago
+            i.fa.fa-comment
+        .clear.break
+      /! comment
+      .comment-wrapper
+        .two.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          .team-wrap
+            img alt="" src=image_url("team1.jpg")
+            .comment-name
+              h6 Alex Andrews
+              p
+                span founder
+        .fourteen.columns.comment data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          span.good 亮点
+          p
+            | We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences.
+          span.bad 不足
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          span.feeling 感受
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          .section-separator-line
+            span.posted-time Posted: 3 days ago
+            i.fa.fa-heart
+            i.fa.fa-gavel
+            i.fa.fa-comment
+        .clear.break
+      .comment-wrapper
+        .two.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          .team-wrap
+            img alt="" src=image_url("team1.jpg")
+            .comment-name
+              h6 Alex Andrews
+              p
+                span founder
+        .fourteen.columns.comment data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          span.good 亮点
+          p
+            | We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences.
+          span.bad 不足
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          span.feeling 感受
+          p
+            | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+          .section-separator-line
+            span.posted-time Posted: 3 days ago
+            i.fa.fa-heart
+            i.fa.fa-gavel
+            i.fa.fa-comment
+        .clear.break
+= content_for :bottom do
+  javascript:
+    $(document).ready(function(){
+       $("#good_comment input").focusin(function(){
+          $("#good_comment").addClass("twelve").removeClass("eight").removeClass("four");
+          $("#bad_comment").addClass("four").removeClass("eight").removeClass("twelve");
+       });
+       $("#bad_comment input").focusin(function(){
+          $("#bad_comment").addClass("twelve").removeClass("eight").removeClass("four");
+          $("#good_comment").addClass("four").removeClass("eight").removeClass("twelve");
+       });
+       $("#good_comment input").focusout(function(){
+          $("#good_comment").addClass("eight").removeClass("twelve").removeClass("four");
+          $("#bad_comment").addClass("eight").removeClass("four").removeClass("twelve");
+       });
+       $("#bad_comment input").focusout(function(){
+          $("#bad_comment").addClass("eight").removeClass("twelve").removeClass("four");
+          $("#good_comment").addClass("eight").removeClass("four").removeClass("twelve");
+       });
+    });

@@ -79,85 +79,56 @@
   /!
     | SEP. SECTION
     | \==================================================
-  .section.product.boxed-width.grey-background
-    .cd-single-item
-      .cd-slider-wrapper
-        .cd-slider-cover
-          a href="#link-to-the-site"
-            i.fa.fa-chain
-        ul.cd-slider
-          li.selected
-            = image_tag "img-1.jpg", alt: 'Product Image 1'
-        /! cd-slider
-      /! cd-slider-wrapper
-      .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
-        h5 站点名字（初始状态）
-        p We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch.
-        form#ajax-form
-          .sub-line
-          button#send.send_message
-            span data-hover="submit"  我要投票
-          .status 已有20票
-      /! cd-item-info
-    /! cd-single-item
-  .section.product.boxed-width.grey-background
-    .cd-single-item
-      .cd-slider-wrapper
-        .cd-slider-cover
-          a href="#link-to-the-site"
-            i.fa.fa-chain
-        ul.cd-slider
-          li.selected
-            = image_tag "img-1.jpg", alt: 'Product Image 1'
-        /! cd-slider
-      /! cd-slider-wrapper
-      .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
-        h5 站点名字（点击投票键后出现）
-        .vote-info
-          .skills-name 设计：
-          .pro-bar-container.pro-bar-margin
-            .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-          br/
-          .skills-name 交互：
-          .pro-bar-container.pro-bar-margin
-            .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-          br/
-          .skills-name 创意：
-          .pro-bar-container.pro-bar-margin
-            .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-          br/
-          .skills-name 内容：
-          .pro-bar-container.pro-bar-margin-last
-            .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-          br/
-        form#ajax-form
-          .sub-line
-          button#send.send_message
-            span data-hover="submit"  确定提交
-          /! <div class="status">3 days left</div
-      /! cd-item-info
-    /! cd-single-item
-  .section.product.boxed-width.grey-background
-    .cd-single-item
-      .cd-slider-wrapper
-        .cd-slider-cover
-          a href="#link-to-the-site"
-            i.fa.fa-chain
-        ul.cd-slider
-          li.selected
-            = image_tag "img-1.jpg", alt: 'Product Image 1'
-        /! cd-slider
-      /! cd-slider-wrapper
-      .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
-        h5 站点名字（已投票）
-        p We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch.
-        form#ajax-form
-          .sub-line
-          button#send.send_message
-            span data-hover="submit"  参与讨论
-          /! <div class="status">3 days left</div
-      /! cd-item-info
-    /! cd-single-item
+  - @products.each do |product|
+    .section.product.boxed-width.grey-background
+      .cd-single-item
+        .cd-slider-wrapper
+          .cd-slider-cover
+            a href=product.url target='_blank'
+              i.fa.fa-chain
+          ul.cd-slider
+            li.selected
+              = image_tag "img-1.jpg", alt: 'Product Image 1'
+          /! cd-slider
+        /! cd-slider-wrapper
+        .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+          h5=product.name
+          .step-1
+            p=product.description
+            #ajax-form
+              .sub-line
+              button.step-1-submit
+                span data-hover="submit"  我要投票
+              .status="已有#{product.ratings.count}票"
+          .step-2 style='display:none'
+            .vote-info
+              .skills-name 设计：
+              .pro-bar-container.pro-bar-margin
+                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+              br/
+              .skills-name 交互：
+              .pro-bar-container.pro-bar-margin
+                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+              br/
+              .skills-name 创意：
+              .pro-bar-container.pro-bar-margin
+                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+              br/
+              .skills-name 内容：
+              .pro-bar-container.pro-bar-margin-last
+                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+              br/
+            #ajax-form
+              .sub-line
+              button#send.send_message.step-2-submit
+                span data-hover="submit"  确定提交
+          .step-3 style="display:none"
+            p We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch.
+            #ajax-form
+              .sub-line
+              button#send.send_message
+                span data-hover="submit"  参与讨论
+        /! cd-item-info
 /!
   | SEP. SECTION
   | \==================================================
@@ -198,3 +169,13 @@
       slideSpeed : 300,
       autoPlay : 5000,
       singleItem:true
+
+    $('.step-1-submit').click (evt)->
+      $item = $(evt.currentTarget).closest('.cd-item-info')
+      $item.find('.step-1').hide()
+      $item.find('.step-2').show()
+
+    $('.step-2-submit').click (evt)->
+      $item = $(evt.currentTarget).closest('.cd-item-info')
+      $item.find('.step-2').hide()
+      $item.find('.step-3').show()

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root 'page#home'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show]  do
+    resources :ratings, only: [:create]
+  end
 
   get 'rules' => 'page#rules'
 

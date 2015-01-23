@@ -1,0 +1,17 @@
+.product {
+  .step-2 {
+    .star {
+      width: 10%;
+      height: 100%;
+      float: left;
+      &:hover { background: #3498db; cursor: pointer;}
+      &.active { background: #3498db;  }
+    }
+    .point {
+      position: absolute;
+      right: -15px;
+      color: #000;
+      font-weight: 700;
+    }
+  }
+}

@@ -10,5 +10,7 @@
 #
 
 class RatingValue < ActiveRecord::Base
+
+  enum rate_type: [ :design, :ux, :creative, :content ]
   belongs_to :rating, touch: true
 end

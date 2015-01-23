@@ -91,7 +91,7 @@
               = image_tag "img-1.jpg", alt: 'Product Image 1'
           /! cd-slider
         /! cd-slider-wrapper
-        .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s") data-product-id=product.id
           h5=product.name
           .step-1
             p=product.description
@@ -102,22 +102,13 @@
               .status="已有#{product.ratings.count}票"
           .step-2 style='display:none'
             .vote-info
-              .skills-name 设计：
-              .pro-bar-container.pro-bar-margin
-                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-              br/
-              .skills-name 交互：
-              .pro-bar-container.pro-bar-margin
-                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-              br/
-              .skills-name 创意：
-              .pro-bar-container.pro-bar-margin
-                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-              br/
-              .skills-name 内容：
-              .pro-bar-container.pro-bar-margin-last
-                .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-              br/
+              - { design: '设计：', ux: '交互：', creative: '创意：', content: '内容：'}.each do |k,v|
+                .skills-name=v
+                .pro-bar-container.pro-bar-margin
+                  - 10.times do
+                    .star
+                  .point data-rate-type='design'
+                / .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
             #ajax-form
               .sub-line
               button#send.send_message.step-2-submit
@@ -178,5 +169,24 @@
     # 只用于演示，后面会去掉这部分内容
     $('.step-2-submit').click (evt)->
       $item = $(evt.currentTarget).closest('.cd-item-info')
-      $item.find('.step-2').hide()
-      $item.find('.step-3').show()
+      rating_values_attributes = []
+      $item.find('.point').each (index, el)->
+        $el = $(el)
+        rating_values_attributes.push {value: parseInt($el.text()), rate_type: $el.data('rate-type')}
+      $.ajax({
+        type: "POST"
+        url: "/products/#{$item.data('product-id')}/ratings"
+        data:
+          rating:
+            rating_values_attributes: rating_values_attributes
+      }).success (data) =>
+        $item.find('.step-2').hide()
+        $item.find('.step-3').show()
+
+    $('.star').hover (evt) ->
+      $target = $(evt.currentTarget)
+      $parent = $target.parent()
+      index = $parent.find('.star').index($target)+1
+      $parent.find(".star").removeClass('active')
+      $parent.find(".star:lt(#{index})").addClass('active')
+      $parent.find('.point').text(index)

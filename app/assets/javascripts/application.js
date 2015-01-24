@@ -32,3 +32,5 @@
 //= require lib/owl.carousel.min
 
 //= require main
+
+//= require zuiux

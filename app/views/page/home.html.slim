@@ -80,45 +80,56 @@
     | SEP. SECTION
     | \==================================================
   - @products.each do |product|
-    .section.product.boxed-width.grey-background
-      .cd-single-item
-        .cd-slider-wrapper
-          .cd-slider-cover
-            a href=product.url target='_blank'
-              i.fa.fa-chain
-          ul.cd-slider
-            li.selected
-              = image_tag "img-1.jpg", alt: 'Product Image 1'
-          /! cd-slider
-        /! cd-slider-wrapper
-        .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s") data-product-id=product.id
-          h5=product.name
-          .step-1
-            p=product.description
-            #ajax-form
-              .sub-line
-              button.step-1-submit
-                span data-hover="submit"  我要投票
-              .status="已有#{product.ratings.count}票"
-          .step-2 style='display:none'
-            .vote-info
-              - { design: '设计：', ux: '交互：', creative: '创意：', content: '内容：'}.each do |k,v|
-                .skills-name=v
-                .pro-bar-container.pro-bar-margin
-                  - 10.times do
-                    .star
-                  .point data-rate-type='design'
-                / .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-            #ajax-form
-              .sub-line
-              button#send.send_message.step-2-submit
-                span data-hover="submit"  确定提交
-          .step-3 style="display:none"
-            p We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch.
-            #ajax-form
-              .sub-line
-              button#send.send_message
-                span data-hover="submit"  参与讨论
+    - cache([product, current_user]) do
+      .section.product.boxed-width.grey-background
+        .cd-single-item
+          .cd-slider-wrapper
+            .cd-slider-cover
+              a href=product.url target='_blank'
+                i.fa.fa-chain
+            ul.cd-slider
+              li.selected
+                = image_tag "img-1.jpg", alt: 'Product Image 1'
+            /! cd-slider
+          /! cd-slider-wrapper
+          .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s") data-product-id=product.id
+            h5=product.name
+            - if current_user && @rated_products.include?(product.id)
+              .step-3
+                p=product.description
+                #ajax-form
+                  .sub-line
+                  = link_to product_path(product, 'html') do
+                    button#send.send_message
+                      span data-hover="submit"  参与讨论
+            - else
+              .step-1
+                p=product.description
+                #ajax-form
+                  .sub-line
+                  button.step-1-submit
+                    span data-hover="submit"  我要投票
+                  .status="已有#{product.ratings.count}票"
+              .step-2 style='display:none'
+                .vote-info
+                  - { design: '设计：', ux: '交互：', creative: '创意：', content: '内容：'}.each do |k,v|
+                    .skills-name=v
+                    .pro-bar-container.pro-bar-margin
+                      - 10.times do
+                        .star
+                      .point data-rate-type='design'
+                    / .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+                #ajax-form
+                  .sub-line
+                  button#send.send_message.step-2-submit
+                    span data-hover="submit"  确定提交
+              .step-3 style="display:none"
+                p=product.description
+                #ajax-form
+                  .sub-line
+                  = link_to product_path(product, 'html') do
+                    button#send.send_message
+                      span data-hover="submit"  参与讨论
         /! cd-item-info
 /!
   | SEP. SECTION
@@ -162,9 +173,12 @@
       singleItem:true
 
     $('.step-1-submit').click (evt)->
-      $item = $(evt.currentTarget).closest('.cd-item-info')
-      $item.find('.step-1').hide()
-      $item.find('.step-2').show()
+      if Zuiux.current_user
+        $item = $(evt.currentTarget).closest('.cd-item-info')
+        $item.find('.step-1').hide()
+        $item.find('.step-2').show()
+      else
+        location.href = "/users/sign_in"
 
     # 只用于演示，后面会去掉这部分内容
     $('.step-2-submit').click (evt)->

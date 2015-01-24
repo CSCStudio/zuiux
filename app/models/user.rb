@@ -33,4 +33,9 @@ class User < ActiveRecord::Base
 
   has_many :ratings
   has_many :products
+
+
+  def rated_products
+    self.ratings.pluck(:product_id)
+  end
 end

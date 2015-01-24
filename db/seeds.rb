@@ -8,6 +8,9 @@
 
 
 #init products
+
 3.times do |index|
   Product.create name: "site 1", url: "http://www.awwwards.com/", description: "We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch."
 end
+
+

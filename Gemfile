@@ -34,6 +34,8 @@ gem 'settingslogic', '~> 2.0.9'
 
 gem "paperclip", "~> 4.2"
 
+gem 'activeadmin', github: 'activeadmin'
+
 group :development do
   gem "better_errors"
   gem 'annotate', '~> 2.6.5'

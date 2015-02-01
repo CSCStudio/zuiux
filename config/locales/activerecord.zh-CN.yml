@@ -1,0 +1,8 @@
+"zh-CN":
+  activerecord:
+    models:
+      user: '用户'
+      admin_user: '管理员'
+      product: '项目'
+      round: '轮次'
+

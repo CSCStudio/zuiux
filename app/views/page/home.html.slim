@@ -23,12 +23,9 @@
       .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
         .project-image-wrapper
           #owl-post-slider.owl-carousel.owl-theme
-            .item
-              = image_tag("blog/2.jpg")
-            .item
-              = image_tag("blog/3.jpg")
-            .item
-              = image_tag("blog/9.jpg")
+            - @best_product.images.each do |image|
+              .item
+                = image_tag image.file
 /!
   | HOME SECTION
   | \==================================================
@@ -89,7 +86,7 @@
                 i.fa.fa-chain
             ul.cd-slider
               li.selected
-                = image_tag "img-1.jpg", alt: 'Product Image 1'
+                = image_tag product.images.first.try(:file), alt: 'Product Image'
             /! cd-slider
           /! cd-slider-wrapper
           .cd-item-info data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s") data-product-id=product.id

@@ -9,6 +9,8 @@
 #  description :text(65535)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  round_id    :integer
+#  best        :boolean
 #
 
 class Product < ActiveRecord::Base
@@ -17,6 +19,9 @@ class Product < ActiveRecord::Base
   validates :url, format: URI::regexp(%w(http https))
 
   belongs_to :user
+  belongs_to :round
   has_many :ratings
+
+  scope :bests, -> { where(best: true)}
 
 end

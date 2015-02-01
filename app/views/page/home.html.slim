@@ -138,30 +138,31 @@
   .parallax-sep-1
   .sep-background-mask
   .container
-    .four.columns
-      .counter-wrap
-        .counter-numb
-          span.counter-facts=Product.bests.count
-        .counter-line
-        h6 期最佳UX
-    .four.columns
-      .counter-wrap
-        .counter-numb
-          span.counter-facts=Product.count
-        .counter-line
-        h6 份作品上传
-    .four.columns
-      .counter-wrap
-        .counter-numb
-          span.counter-facts=User.count
-        .counter-line
-        h6 人次参与
-    .four.columns
-      .counter-wrap
-        .counter-numb
-          span.counter-facts=Rating.count
-        .counter-line
-        h6 次投票
+    = cache(:system_statistics, expires_in: 15.minutes)
+      .four.columns
+        .counter-wrap
+          .counter-numb
+            span.counter-facts=Product.bests.count
+          .counter-line
+          h6 期最佳UX
+      .four.columns
+        .counter-wrap
+          .counter-numb
+            span.counter-facts=Product.count
+          .counter-line
+          h6 份作品上传
+      .four.columns
+        .counter-wrap
+          .counter-numb
+            span.counter-facts=User.count
+          .counter-line
+          h6 人次参与
+      .four.columns
+        .counter-wrap
+          .counter-numb
+            span.counter-facts=Rating.count
+          .counter-line
+          h6 次投票
 
 = content_for :bottom do
   coffee:

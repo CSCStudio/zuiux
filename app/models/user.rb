@@ -38,4 +38,8 @@ class User < ActiveRecord::Base
   def rated_products
     self.ratings.pluck(:product_id)
   end
+
+  def name
+    email.to_s.split('@').first
+  end
 end

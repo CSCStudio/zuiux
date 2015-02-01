@@ -17,7 +17,7 @@ class Rating < ActiveRecord::Base
   belongs_to :user
   belongs_to :product, touch: true
 
-  has_many :rating_values
+  has_many :rating_values, dependent: :destroy
 
   accepts_nested_attributes_for :rating_values
 

@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
   belongs_to :round
   has_many :ratings
-  has_many :images, as: :attachable
+  has_many :images, as: :attachable, dependent: :destroy
 
   scope :bests, -> { where(best: true)}
 

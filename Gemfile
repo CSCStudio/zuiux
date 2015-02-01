@@ -32,7 +32,7 @@ gem 'puma', '~> 2.10.2'
 
 gem 'settingslogic', '~> 2.0.9'
 
-# gem "paperclip", "~> 4.2"
+gem "paperclip", "~> 4.2"
 
 group :development do
   gem "better_errors"

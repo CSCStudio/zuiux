@@ -9,6 +9,8 @@
 #  description :text(65535)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  round_id    :integer
+#  best        :boolean
 #
 
 require 'rails_helper'

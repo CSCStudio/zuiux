@@ -7,6 +7,10 @@
 #  product_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  design     :integer          default("0")
+#  ux         :integer          default("0")
+#  creative   :integer          default("0")
+#  content    :integer          default("0")
 #
 
 require 'rails_helper'

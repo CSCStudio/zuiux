@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201123429) do
+ActiveRecord::Schema.define(version: 20150203161317) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -72,8 +72,12 @@ ActiveRecord::Schema.define(version: 20150201123429) do
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "product_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "design",     limit: 4, default: 0
+    t.integer  "ux",         limit: 4, default: 0
+    t.integer  "creative",   limit: 4, default: 0
+    t.integer  "content",    limit: 4, default: 0
   end
 
   add_index "ratings", ["product_id"], name: "index_ratings_on_product_id", using: :btree

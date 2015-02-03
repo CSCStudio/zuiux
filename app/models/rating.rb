@@ -17,9 +17,9 @@ class Rating < ActiveRecord::Base
   belongs_to :user
   belongs_to :product, touch: true
 
-  has_many :rating_values, dependent: :destroy
+  # has_many :rating_values, dependent: :destroy
 
-  accepts_nested_attributes_for :rating_values
+  # accepts_nested_attributes_for :rating_values
 
   scope :latest, -> {order("created_at desc")}
   scope :product_with_user, ->(product_id, user_id) { where(product_id: product_id, user_id: user_id)}

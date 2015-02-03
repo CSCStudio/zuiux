@@ -114,7 +114,7 @@
                     .pro-bar-container.pro-bar-margin
                       - 10.times do
                         .star
-                      .point data-rate-type='design'
+                      .point data-rate-type=k
                     / .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
                 #ajax-form
                   .sub-line
@@ -176,15 +176,15 @@
     $('.step-2-submit').click (evt)->
       $item = $(evt.currentTarget).closest('.cd-item-info')
       rating_values_attributes = []
+      rating = {}
       $item.find('.point').each (index, el)->
         $el = $(el)
-        rating_values_attributes.push {value: parseInt($el.text()), rate_type: $el.data('rate-type')}
+        rating[$el.data('rate-type')] = parseInt($el.text())
       $.ajax({
         type: "POST"
         url: "/products/#{$item.data('product-id')}/ratings"
         data:
-          rating:
-            rating_values_attributes: rating_values_attributes
+          rating: rating
       }).success (data) =>
         $item.find('.step-2').hide()
         $item.find('.step-3').show()

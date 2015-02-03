@@ -22,4 +22,5 @@ class Rating < ActiveRecord::Base
   accepts_nested_attributes_for :rating_values
 
   scope :latest, -> {order("created_at desc")}
+  scope :product_with_user, ->(product_id, user_id) { where(product_id: product_id, user_id: user_id)}
 end

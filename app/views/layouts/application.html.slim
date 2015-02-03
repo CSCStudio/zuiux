@@ -5,7 +5,6 @@ html lang=I18n.locale
     title
       = "Zuiux"
     = stylesheet_link_tag   'application', media: 'all'
-
     /!
       | Favicons
       | \==================================================
@@ -38,7 +37,7 @@ html lang=I18n.locale
         .container
           .sixteen.columns
             a data-dummy="twitter" href="#"  twitter
-            a data-dummy="github" href="#"  github
+            a data-dummy="github" href="https://github.com/CSCStudio" target="_blank" github
             a data-dummy="facebook" href="#"  facebook
             a data-dummy=("google +") href="#"  google +
       .footer-credit
@@ -46,7 +45,7 @@ html lang=I18n.locale
           .sixteen.columns
             p
               | © All rights reserved. Made by
-              a data-dummy=("IG Design") href="http://themeforest.net/user/IG_design?ref=IG_design"
+              a data-dummy=("IG Design") href="http://CSCStudio.github.io"
                 span CSC Studio
     = javascript_include_tag 'application'
     = yield :bottom

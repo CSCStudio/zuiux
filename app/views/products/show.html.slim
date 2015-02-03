@@ -1,31 +1,44 @@
-#top.section.boxed-width.grey-background.padding-posts
-  .container
-    .eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
-      .post-top-text
-        h4
-          | 站点名字在这里哦
-          br/
-          span.last-week-label
-            | 本期最
-            span UX
-            span/
-        .sub-line
-        .sub-text
-          span> 作者：
-          | 哈利波特
-    .eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
-      .post-top-text
-        p.text-padding We're a close team of creatives, designers & developers who work together to create beautiful, engaging digital experiences. Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
-        p We take pride in delivering only the best. We're an agency born out of a passion to make great products. We help companies and startups from all over the world materialize their ideas.
-    .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
-      .project-image-wrapper
-        #owl-post-slider.owl-carousel.owl-theme
-          .item
-            img alt="" src=image_url("blog/2.jpg")
-          .item
-            img alt="" src=image_url("blog/3.jpg")
-          .item
-            img alt="" src=image_url("blog/9.jpg")
+- cache(@product) do
+  #top.section.boxed-width.grey-background.padding-posts
+    .container
+      .eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        .post-top-text
+          h4
+            = @product.name
+            br
+          .sub-line
+      .eight.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        .post-top-text
+          = simple_format @product.description
+      .sixteen.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+        .project-image-wrapper
+          #owl-post-slider.owl-carousel.owl-theme
+            - @product.images.each do |image|
+              .item
+                = image_tag image.file
+    .section.product-detail
+      .container
+        .left
+          .avatar
+            img alt="" src=image_url("team1.jpg")
+            span.author
+              | 作者名字
+              = @product.user.try(:name)
+        .right
+          .vote-info
+            .skills-name 设计：
+            .pro-bar-container.pro-bar-margin
+              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+            .skills-name 交互：
+            .pro-bar-container.pro-bar-margin
+              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+            .skills-name 创意：
+            .pro-bar-container.pro-bar-margin
+              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+            .skills-name 内容：
+            .pro-bar-container.pro-bar-margin-last
+              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+
 /!
   | HOME SECTION
   | \==================================================
@@ -60,7 +73,7 @@
       .clear
       #err-form.error.text-align-center There was a problem validating the form please check!
       #err-timedout.error.text-align-center The connection to the server timed out!
-      #err-state.error
+    #err-state.error
 /!
   | CONTACT SECTION
   | \==================================================

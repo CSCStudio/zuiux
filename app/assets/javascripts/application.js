@@ -33,4 +33,6 @@
 
 //= require main
 
+//= require_tree ./plugins
+
 //= require zuiux

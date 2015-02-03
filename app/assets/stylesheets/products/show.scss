@@ -86,3 +86,23 @@
 .avatar-wrap img{
  width: 100%;
 }
+
+.product-detail {
+  .left {
+    float: left;
+    width: 50%;
+    text-align: left;
+    img {
+      width: 160px;
+      max-height: 160px;
+    }
+    .author {
+      position: absolute;
+      margin-left: 15px;
+    }
+  }
+  .right {
+    float: right;
+    width: 50%;
+  }
+}

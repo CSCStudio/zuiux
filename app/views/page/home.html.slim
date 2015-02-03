@@ -164,12 +164,6 @@
 = content_for :bottom do
   coffee:
     "use strict"
-    $("#owl-post-slider").owlCarousel
-      navigation: false,
-      slideSpeed : 300,
-      autoPlay : 5000,
-      singleItem:true
-
     $('.step-1-submit').click (evt)->
       if Zuiux.current_user
         $item = $(evt.currentTarget).closest('.cd-item-info')

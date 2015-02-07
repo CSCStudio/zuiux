@@ -109,13 +109,12 @@
                   .status="已有#{product.ratings.count}票"
               .step-2 style='display:none'
                 .vote-info
-                  - { design: '设计：', ux: '交互：', creative: '创意：', content: '内容：'}.each do |k,v|
-                    .skills-name=v
+                  - Rating::FORM_LABELS.each do |attribute,label|
+                    .skills-name=label
                     .pro-bar-container.pro-bar-margin
                       - 10.times do
                         .star
-                      .point data-rate-type=k
-                    / .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+                      .point data-rate-type=attribute
                 #ajax-form
                   .sub-line
                   button#send.send_message.step-2-submit

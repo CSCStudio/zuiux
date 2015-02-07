@@ -27,4 +27,11 @@ class Product < ActiveRecord::Base
 
   scope :bests, -> { where(best: true)}
 
+  def scores
+    ratings = self.ratings.to_a
+    length = ratings.length
+    return Hash.new(0.0) if length == 0
+    [:design, :ux, :creative, :content, :average_value ].inject({}) {| result, k | result[k] = ratings.send(:sum, &:"#{k}").to_f/length; result }
+  end
+
 end

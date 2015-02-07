@@ -1392,8 +1392,9 @@ ul.slimmenu.collapsed li > ul {
 	letter-spacing:2px;
 	color:#212121;
 	text-transform: uppercase;
-    float:left;
-    font-size: 14px;
+  float:left;
+  font-size: 14px;
+  &:after { content: ":" };
 }
 .vote-info{
     margin-top: 13px;

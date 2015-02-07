@@ -26,18 +26,11 @@
               = @product.user.try(:name)
         .right
           .vote-info
-            .skills-name 设计：
-            .pro-bar-container.pro-bar-margin
-              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-            .skills-name 交互：
-            .pro-bar-container.pro-bar-margin
-              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-            .skills-name 创意：
-            .pro-bar-container.pro-bar-margin
-              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
-            .skills-name 内容：
-            .pro-bar-container.pro-bar-margin-last
-              .pro-bar.bar-64 data-pro-bar-delay="200" data-pro-bar-percent="64"
+            - Rating::FORM_LABELS.each do |attribute,label|
+              - point = (@product_statistics[attribute] * 10).to_i
+              .skills-name=label
+              .pro-bar-container.pro-bar-margin
+                .pro-bar data-pro-bar-delay="200" data-pro-bar-percent=point class="bar-#{point}"
 
 /!
   | HOME SECTION
@@ -170,23 +163,3 @@
             i.fa.fa-gavel
             i.fa.fa-comment
         .clear.break
-= content_for :bottom do
-  javascript:
-    $(document).ready(function(){
-       $("#good_comment input").focusin(function(){
-          $("#good_comment").addClass("twelve").removeClass("eight").removeClass("four");
-          $("#bad_comment").addClass("four").removeClass("eight").removeClass("twelve");
-       });
-       $("#bad_comment input").focusin(function(){
-          $("#bad_comment").addClass("twelve").removeClass("eight").removeClass("four");
-          $("#good_comment").addClass("four").removeClass("eight").removeClass("twelve");
-       });
-       $("#good_comment input").focusout(function(){
-          $("#good_comment").addClass("eight").removeClass("twelve").removeClass("four");
-          $("#bad_comment").addClass("eight").removeClass("four").removeClass("twelve");
-       });
-       $("#bad_comment input").focusout(function(){
-          $("#bad_comment").addClass("eight").removeClass("twelve").removeClass("four");
-          $("#good_comment").addClass("eight").removeClass("four").removeClass("twelve");
-       });
-    });

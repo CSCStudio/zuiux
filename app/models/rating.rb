@@ -15,6 +15,8 @@
 
 class Rating < ActiveRecord::Base
 
+  FORM_LABELS = { design: '设计', ux: '交互', creative: '创意', content: '内容'}
+
   validates_presence_of :user, :product
   validates_uniqueness_of :user_id, scope: [:product_id]
 
@@ -27,4 +29,8 @@ class Rating < ActiveRecord::Base
 
   scope :latest, -> {order("created_at desc")}
   scope :product_with_user, ->(product_id, user_id) { where(product_id: product_id, user_id: user_id)}
+
+  def average_value
+    (self.design + self.ux)*0.3 + (self.creative + self.content)*0.2
+  end
 end

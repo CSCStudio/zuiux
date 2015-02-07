@@ -9,6 +9,6 @@ class RatingsController < ApplicationController
 
   private
    def rating_params
-    params.require(:rating).permit(rating_values_attributes: [:value, :rate_type])
+    params.require(:rating).permit(:design, :ux, :creative, :content)
   end
 end

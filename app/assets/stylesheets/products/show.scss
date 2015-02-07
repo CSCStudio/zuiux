@@ -102,7 +102,30 @@
     }
   }
   .right {
-    float: right;
+    float: left;
     width: 50%;
+    .vote-info {
+      width: 75%;
+    }
+    .product-value {
+      border: 2px solid #3498db;
+      display: inline-block;
+      width: 21%;
+      height: 116px;
+      color: #3498db;
+      font-weight: 700;
+      .integer{
+        position: absolute;
+        font-weight: bold;
+        font-size: 50px;
+        margin-top: 50px;
+        margin-left: -20px;
+      }
+      .decimal{
+        position: absolute;
+        margin-top: 60px;
+        &:before{ content: ".";}
+      }
+    }
   }
 }

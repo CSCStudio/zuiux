@@ -31,6 +31,15 @@
               .skills-name=label
               .pro-bar-container.pro-bar-margin
                 .pro-bar data-pro-bar-delay="200" data-pro-bar-percent=point class="bar-#{point}"
+          .product-value
+            span.integer=@product_statistics[:average_value].to_i
+            span.decimal
+              =number_to_currency(@product_statistics[:average_value], precision: 2).to_s.split('.').last
+    // All ratings detail.
+    .section.ratings
+      - @product.ratings.each do |rating|
+        p.user = rating.user.name
+        p.average_value = rating.average_value
 
 /!
   | HOME SECTION

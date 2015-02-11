@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show]  do
     resources :ratings, only: [:create]
+    resources :product_comments, only: [:create]
   end
 
   get 'rules' => 'page#rules'

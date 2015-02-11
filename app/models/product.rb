@@ -22,6 +22,7 @@ class Product < ActiveRecord::Base
   belongs_to :round
   has_many :ratings
   has_many :images, as: :attachable, dependent: :destroy
+  has_many :comments, class_name: 'ProductComment', dependent: :destroy
 
   accepts_nested_attributes_for :images ,:allow_destroy => true
 

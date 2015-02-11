@@ -1,0 +1,41 @@
+/! comments
+.comment-wrapper
+  .two.columns data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+    .team-wrap
+      img alt="" src=image_url("team1.jpg")
+      .comment-name
+        h6 Alex Andrews
+        p
+          span founder
+  .fourteen.columns.comment data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+    span.good 亮点
+    p
+      = comment.good
+    span.bad 不足
+    p
+      = comment.bad
+    span.feeling 感受
+    p
+      =simple_format comment.feeling
+    .section-separator-line
+      span.posted-time.timeago title=comment.created_at
+      i.fa.fa-comment
+      i.fa.fa-heart
+      i.fa.fa-gavel
+  .clear.break
+/! replies
+.comment-wrapper.reply
+  .two.columns
+  .fourteen.columns.comment data-scroll-reveal=("enter bottom move 100px over 0.6s after 0.2s")
+    .avatar-wrap
+      img alt="" src=image_url("team1.jpg")
+      .comment-name
+    p.name
+      span> Alex Andrews
+      | Founder
+    p
+      | Our team is specially designed to create successful, custom, innovative digital products from the initial concept through full product launch. From whiteboard sketches to pixel-perfect designs.
+    .section-separator-line
+      span.posted-time Posted: 3 days ago
+      i.fa.fa-comment
+  .clear.break

@@ -27,6 +27,7 @@
 //= require lib/jquery.malihu.PageScroll2id
 //= require lib/waypoints.min
 //= require lib/jquery.counterup.min
+//= require lib/jquery.timeago
 //= require lib/imagesloaded.pkgd.min
 //= require lib/isotope
 //= require lib/owl.carousel.min
@@ -36,3 +37,8 @@
 //= require_tree ./plugins
 
 //= require zuiux
+
+
+$( document ).ready(function() {
+  $('.timeago').timeago();
+});

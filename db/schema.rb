@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203161317) do
+ActiveRecord::Schema.define(version: 20150211144043) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(version: 20150203161317) do
   end
 
   add_index "images", ["attachable_type", "attachable_id"], name: "index_images_on_attachable_type_and_attachable_id", using: :btree
+
+  create_table "product_comments", force: :cascade do |t|
+    t.text     "good",       limit: 65535
+    t.text     "bad",        limit: 65535
+    t.text     "feeling",    limit: 65535
+    t.integer  "product_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "product_comments", ["product_id"], name: "index_product_comments_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.integer  "user_id",     limit: 4
